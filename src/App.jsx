@@ -6,6 +6,7 @@ import { HowItWorks } from "./pages/Howitworks";
 import { Property } from "./pages/property";
 import { Dashboard } from "./pages/Dashboard";
 import { About } from "./pages/About";
+import { PropertyDetails } from "./pages/Propertdetails";
 
 export function App() {
   return (
@@ -17,6 +18,7 @@ export function App() {
         <Route path="/properties" element={<Property />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
+        <Route path="/propertydetails/:id" element={<PropertyDetails />} />
       </Routes>
       <Footer />
     </div>

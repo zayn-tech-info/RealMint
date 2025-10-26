@@ -142,7 +142,7 @@ export function Property() {
             {properties.map((property) => (
               <Link
                 key={property.id}
-                href={`/properties/${property.id}`}
+                to={`/propertydetails/${property.id}`}
                 className="group"
               >
                 <div className="bg-gradient-to-br from-green-900/20 to-black/40 backdrop-blur-sm border border-green-700/30 rounded-2xl overflow-hidden hover:border-green-600/50 transition-all hover:scale-[1.02]">

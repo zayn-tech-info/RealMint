@@ -1,4 +1,9 @@
-"use client";
+import BathRoom from "../assets/modern-bathroom.jpg"    
+import BedRoom from "../assets/modern-bedroom.jpg";
+import kitchen from "../assets/modern-kitchen.jpg";
+import LivingRoom from "../assets/modern-livingroom.jpg";
+import House from "../assets/morden-house.jpg";
+
 
 import {
   Home,
@@ -12,64 +17,25 @@ import {
   Wallet,
   CheckCircle2,
 } from "lucide-react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export function PropertyDetail() {
+
+export function PropertyDetails() {
   const [monthlyPayment, setMonthlyPayment] = useState(1850);
   const totalValue = 425000;
   const ownershipPercentage = (monthlyPayment / totalValue) * 100 * 120; // Assuming 120 months
 
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-green-900/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-700 rounded-lg flex items-center justify-center">
-                <Home className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-white">OwnChain</span>
-            </Link>
+ 
 
-            <div className="hidden md:flex items-center gap-8">
-              <Link
-                href="/properties"
-                className="text-gray-300 hover:text-green-400 transition-colors"
-              >
-                Properties
-              </Link>
-              <Link
-                href="/how-it-works"
-                className="text-gray-300 hover:text-green-400 transition-colors"
-              >
-                How It Works
-              </Link>
-              <Link
-                href="/about"
-                className="text-gray-300 hover:text-green-400 transition-colors"
-              >
-                About
-              </Link>
-              <Link
-                href="/dashboard"
-                className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors font-medium"
-              >
-                Dashboard
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Property Images */}
       <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-4 mb-8">
             <div className="relative h-[500px] rounded-2xl overflow-hidden">
               <img
-                src="/generic-house.png"
+                src={House}
                 alt="Property main view"
                 className="w-full h-full object-cover"
               />
@@ -77,28 +43,28 @@ export function PropertyDetail() {
             <div className="grid grid-cols-2 gap-4">
               <div className="relative h-60 rounded-2xl overflow-hidden">
                 <img
-                  src="/modern-kitchen.png"
+                  src={kitchen}
                   alt="Kitchen"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="relative h-60 rounded-2xl overflow-hidden">
                 <img
-                  src="/modern-living-room.png"
+                  src={LivingRoom}
                   alt="Living room"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="relative h-60 rounded-2xl overflow-hidden">
                 <img
-                  src="/modern-bedroom.png"
+                  src={BedRoom}
                   alt="Bedroom"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="relative h-60 rounded-2xl overflow-hidden">
                 <img
-                  src="/modern-bathroom.png"
+                  src={BathRoom}
                   alt="Bathroom"
                   className="w-full h-full object-cover"
                 />
@@ -288,16 +254,6 @@ export function PropertyDetail() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t border-green-900/20 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center text-gray-400 text-sm">
-          <p>
-            &copy; 2025 OwnChain. All rights reserved. Powered by Hedera
-            Blockchain.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }
